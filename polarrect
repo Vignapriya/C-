@@ -1,0 +1,47 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+class polar
+{
+    double p1,r1;
+    public:
+    polar(double x1,double y1)
+    {
+        p1=x1;
+        r1=y1;
+    }
+    double getvalue()
+    {
+        return p1;
+    }
+    double get()
+    {
+        return r1;
+    }
+};
+class rectangle{
+    double x,y;
+    public:
+    rectangle(polar p)
+    {
+        double a=p.getvalue();
+        double b=p.get();
+        x=a*cos(b);
+        y=a*sin(b);
+    }
+    void display()
+    {
+        cout<<x<<"+j"<<y<<endl;
+    }
+};
+
+int main()
+{
+    double m,angle;
+    m=20;
+    angle=275;
+    polar p2(m,angle);
+    rectangle r2(p2);
+    r2.display();
+    return 0;
+}
